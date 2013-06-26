@@ -1,0 +1,85 @@
+/*
+   Matt Nowakowski
+   Project 4
+   term 1306
+    
+*/
+
+/*
+	
+	Vertical Stack Design Concept
+	with JQuery Mobile
+	Feature: top center
+	Search:  middle top center
+	Browse:  center bottom
+*/
+
+body {
+	background-image:url('../images/deep_backgrounds/grid_bg.png');
+}
+
+a:link {
+	text-decoration: none;
+}
+
+label.error{
+	/*default is inline*/
+	display: block;
+	margin: 10px 0;
+	color: #ff6600;
+}
+
+li {
+	list-style-type: none;
+	margin: 3px 0;
+}
+
+button#submit {
+	display: inline;
+	text-align: left;
+	width: 55px;
+	height: 25px;
+	margin: 3px 3px 3px 3px;
+}
+
+
+
+.ui-body {
+	
+}
+
+.ui-page {
+    background-image: url("../images/deep_backgrounds/grid_bg.png");
+}
+
+.ui-icon-showoff-home {
+	background-image: url("home.png");
+}
+
+.ui-icon-showoff-info {
+	background-image: url("info.png");	
+}
+
+.ui-icon-showoff-add {
+	background-image: url("add.png");	
+}
+
+.ui-icon-showoff-search {
+	background-image: url("search.png");	
+}
+
+.ui-icon-showoff-browse {
+	background-image: url("browse.png");	
+}
+
+.ui-icon-showoff-news {
+	background-image: url("news.png");	
+}
+
+.ui-icon-showoff-edit {
+	background-image: url("edit.png");	
+}
+
+.ui-icon-showoff-delete {
+	background-image: url("delete.png");	
+}

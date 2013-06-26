@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+    
+     
+     <!--
+   Matt Nowakowski
+   MIU
+   term 1306
+   Project 3
+    -->
+    
+<html lang="en">
+	<head>
+		<title>Media library</title>
+		<meta type="charset" content = "utf-8" />
+		<meta type="robots" content="index,follow" />
+		<meta type="description" content="Manage your media library" />
+		<meta type="keywords" content = "media library, add media, matt nowakowski, vfw" />
+		
+	
+		<link href='http://fonts.googleapis.com/css?family=Parisienne' rel='stylesheet' type='text/css'>
+	
+		<meta name="HandheldFriendly" content="True">
+		<meta name="MobileOptimized" content="320"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+		
+		<meta http-equiv="cleartype" content="on">
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.css" />
+			
+		<link rel="stylesheet" href="jquery.ui.datepicker.mobile.css" /> 
+		
+		
+		<script src="js/libs/modernizr.custom.min.js"></script>
+		
+		
+		<link rel="stylesheet" href="css/styles.css" />
+	
+	</head>
+	</head>
+	<body>
+	
+	<div data-role="page" id="home" data-theme="d" data-add-back-btn="true">
+		<div data-role="header">
+			<h1><a href="#home">Media library</a></h1>
+		</div>
+		<div data-role="content">	
+			<small><center>Media library.</center></small>
+			<br />
+			<center>
+				<section id="feature">
+					<a href="#latest"><img src="images/feature_image_with_cta.svg" width="120px" height="126px" border="0" /></a>
+				</section>
+				<a href="#latest" id="latest" rel="internal" data-ajax="false" data-inline="true" data-icon="star" data-role="button" data-add-back-btn="true" data-theme="b" />Latest</a><br />
+				<a href="#additem" id="addNew" rel="internal" data-ajax="false" data-inline="true" data-icon="plus" data-role="button" data-add-back-btn="true" data-theme="b" />Add New</a><br />
+				<a href="#clear" id="clear" rel="internal" data-ajax="false" data-inline="true" data-rel="dialog" data-add-back-btn="true" />delete all</a>
+			</center>
+		</div>
+		<div data-role="footer" data-position="fixed">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#home" id="home" class="ui-btn-active" rel="internal" data-ajax="false" data-inline="true" data-icon="home" data-add-back-btn="true" />Home</a></li>
+					<li><a href="#items" id="displayLink" rel="internal" data-ajax="false" data-inline="true" data-icon="search" data-add-back-btn="true" />Search</a></li>
+					<li><a href="#browse" id="browse" rel="internal" data-ajax="false" data-inline="true" data-icon="check" data-add-back-btn="true" />Browse</a></li>					
+					<li><a href="#contact"  id="contact" rel="internal" data-ajax="false" data-inline="true" data-icon="grid" data-add-back-btn="true" />Contact</a></li>
+					<li><a href="#info" id="info" rel="internal" data-ajax="false" data-inline="true" data-icon="info" data-add-back-btn="true" />Info</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	
+	<div data-role="page" id="additem" data-theme="d" data-add-back-btn="true">
+		<div data-role="header" data-theme="a">
+			<h1><a href="#home" class="logoAlign">Media library</a></h1>
+			<small><center>Media library</center></small>	
+		</div>
+		<div data-role="content">
+			<section id="addNew">
+				<center><h2>Add New Media</h2></center>
+			</section>
+			<section id="errors"></section>
+			<form action="#feature" method="post" id="mediaForm">
+					<fieldset id="mediaFieldSet">
+						<center><span><small>* fields required.</small><br /></span></center>
+							<ul id="media">
+								<div data-role="fieldcontain">
+									<li id="mtype">
+										<label for="mtype">* Media Type:</label>
+									</li>
+								</div>
+								<div data-role="fieldcontain">
+									<li id="mdate">
+										<label for="mdate">* Media Date: </label> 
+										<input type="date" id="mdate" class="required" value="01/01/2013" />
+									</li>
+								</div>
+								<div data-role="fieldcontain">
+									<li id="mname">
+										<label for="mname">* Media Name: </label>
+										<input type="text" id="mname" class="required" value="Name of media" />
+									</li>
+								</div>
+									
+									<div data-role="collapsible">
+									<h3>Additional options</h3>
+										<div data-role="fieldcontain">
+											<li id="mediarating"><label for="mrating">Media Rating: </label>
+												<input type="range" min="1" max="10" name="rating" value="5" id="mrating" />
+												<br />
+												<div id="hint">0 = Poor. 10 = Great.</div>
+											</li>
+										</div>
+										<div data-role="fieldcontain">
+											<fieldset data-role="controlgroup">
+												<li id="mediatopics">
+												<label for="mtopic">
+													<legend>Media format:</legend>
+												</label> 
+													<input type="radio" value="cd" id="cd" name="mtopics" checked />
+													<label for="cd">cd</label>
+													
+													<input type="radio" value="dvd" id="dvd" name="mtopics" />
+													<label for="dvd">dvd</label>
+													
+													<input type="radio" value="bluray" id="bluray" name="mtopics" />
+													<label for="bluray">bluray</label>
+													<br />
+												</li>
+											</fieldset>
+										</div>
+										<div data-role="fieldcontain">
+											<li id="mediatags">
+												<label for="mtags">Media Tags:</label>
+												<input type="text" id="mtags" value="Keywords separated by a space." />
+											</li>
+										</div>
+										<div data-role="fieldcontain">
+											<li id="mediagraphic">
+												<label for="mgraphic">Image</label>
+												<input type="text" id="mgraphic" value="http:" />
+											</li>
+										</div>
+										<div data-role="fieldcontain">
+											<li id="mediacomments">
+												<label for="mcomments">Comments:</label>
+												<textarea id="mcomments" value="Feelings towards the media" />comment here.</textarea>
+											</li>
+										</div>
+									</div>
+									
+							</ul>
+								<div data-role="fieldcontain">
+									<input type="submit" data-theme="e" value="Save Media" id="submit" data-mini="true" align="left" />
+								    <input type="reset" data-theme="C" value="reset" /> 
+								</div>
+					</fieldset>
+				</form>
+		</div>
+		<div data-role="footer" data-position="fixed">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#home" id="home" rel="internal" data-ajax="false" data-inline="true" data-icon="home" data-add-back-btn="true"/>Home</a></li>
+					<li><a href="#items" id="displayLink" class="ui-btn-active" rel="internal" data-ajax="false" data-inline="true" data-icon="search" data-role="button" data-add-back-btn="true" />Search</a></li>
+					<li><a href="#browse" id="browse" rel="internal" data-ajax="false" data-inline="true" data-icon="check" data-add-back-btn="true" />Browse</a></li>					
+					<li><a href="#contact"  id="contact" rel="external" data-ajax="false" data-inline="true" data-icon="grid" data-add-back-btn="true"/>Contact</a></li>
+					<li><a href="#info" id="info" rel="internal" data-ajax="false" data-inline="true" data-icon="info" data-add-back-btn="true"/>Info</a></li>
+				</ul>
+			</div>
+		</div><
+	</div>
+	
+	<div data-role="page" id="contact" data-theme="d" data-add-back-btn="true">
+		<div data-role="header">
+				<h1><a href="#home" class="logoAlign">Media library</a></h1>
+				<small><center>Media library</center></small>	
+		</div>
+		<div data-role="content">
+			<section id="newStream">
+				<h2>Contact</h2>
+					<ul data-role="listview" data-inset="true">
+						<li>
+							
+								<p>
+								Matt Nowakowski<br/>
+								Student<br/> 
+								</p>
+							</a>
+						</li>
+						<li>
+							<a href="http://www.FullSail.edu">
+								<p>
+								Full Sail University<br/>
+								Online Mobile Development<br/>
+								</p>
+							</a>
+						</li>
+					</ul>
+
+			
+			</section>
+		</div>
+		<div data-role="footer" data-position="fixed">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#home" id="home" rel="internal" data-ajax="false" data-inline="true" data-icon="home" data-add-back-btn="true"/>Home</a></li>
+					<li><a href="#items" id="displayLink" rel="internal" data-ajax="false" data-inline="true" data-icon="search" data-add-back-btn="true" />Search</a></li>
+					<li><a href="#browse" id="browse" rel="internal" data-ajax="false" data-inline="true" data-icon="check" data-add-back-btn="true" />Browse</a></li>					
+					<li><a href="#contact"  id="contact" class="ui-btn-active" rel="external" data-ajax="false" data-inline="true" data-icon="grid" data-add-back-btn="true"/>Contact</a></li>
+					<li><a href="#info" id="info" rel="internal" data-ajax="false" data-inline="true" data-icon="info" data-add-back-btn="true"/>Info</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	
+	<div data-role="page" id="browse" data-theme="d" data-add-back-btn="true">
+		<div data-role="header">
+				<h1><a href="#home" class="logoAlign">Media library</a></h1>
+				<small><center>Media library</center></small>	
+		</div>
+		<div data-role="content">
+			<section id="browse">
+				<h3>Browse Media</h3>
+					<ul data-role="listview" data-inset="true" data-theme="d">
+						<li data-filtertext="Xbox"><a href="#items" id="displayXboxLink" data-filter-placeholder="xbox" rel="internal" data-ajax="false"><img src="images/Xbox.jpg" border="0" width="35" height="35" alt="Browse Xbox "/>Xbox</a></li>
+						<li data-filtertext="Playstation"><a href="#items" data-filter-placeholder="Playstation" id="displayPlaystationLink" rel="internal" data-ajax="false"><img src="images/Playstation.jpg" border="0" width="35" height="35" alt="Browse Playstation"/>Playstation</a></li>
+						<li data-filtertext="Music"><a href="#items" data-filter-placeholder="Music" id="displayMusicLink" rel="internal" data-ajax="false"><img src="images/Music.jpg" border="0" width="35" height="35" alt="Browse Music"/>Music</a></li>			
+						<li data-filtertext="wii u" ><a href="#items" data-filter-placeholder="wiiu" id="displayWiiuLink" rel="internal" data-ajax="false"><img src="images/wiiu.jpg" border="0" width="35" height="35" alt="Browse Wii u"/>wii u</a></li>			
+						<li data-filtertext="PC"><a href="#items" data-filter-placeholder="pc" id="displayPcLink" rel="internal" data-ajax="false"><img src="images/PC.jpg" border="0" width="35" height="35" alt="Browse PC"/>PC</a></li>			
+						<li data-filtertext="Movie"><a href="#items" data-filter-placeholder="movie" id="displayMovieLink" rel="internal" data-ajax="false"><img src="images/Movie.jpg" border="0" width="35" height="35" alt="Browse Movie"/>Movie</a></li>			
+					</ul>
+			</section>
+		</div>
+		<div data-role="footer" data-position="fixed">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#home" id="home" rel="external" data-ajax="false" data-inline="true" data-icon="home" data-add-back-btn="true"/>Home</a></li>
+					<li><a href="#items" id="displayLink" rel="internal" data-ajax="false" data-inline="true" data-icon="search" data-role="button" data-add-back-btn="true" />Search</a></li>
+					<li><a href="#browse" id="browse" class="ui-btn-active" rel="internal" data-ajax="false" data-inline="true" data-icon="check" data-role="button" />Browse</a></li>					
+					<li><a href="#contact"  id="contact" rel="external" data-ajax="false" data-inline="true" data-icon="grid" data-add-back-btn="true"/>Contact</a></li>
+					<li><a href="#info" id="info" rel="internal" data-ajax="false" data-inline="true" data-icon="info" data-add-back-btn="true"/>Info</a></li>
+				</ul>
+			</div>
+		</div><
+	</div>
+	
+	<div data-role="page" id="latest" data-theme="d" data-add-back-btn="true">
+		<div data-role="header">
+				<h1><a href="#home" class="logoAlign">Media library</a></h1>
+				<small><center>Media library</center></small>	
+		</div>
+		<div data-role="content">
+			<section id="newStream">
+				<center>
+				<h2>Newest Media</h2>
+									
+					<ul data-role="listview" data-theme="d" data-inset="true" data-back-btn="true">
+					
+						<div class="ui-grid-a">
+							<div class="ui-block-a">
+								<li>
+									<img width="75px" height="75px" src="http://a5.mzstatic.com/us/r1000/062/Video2/v4/cd/8f/ff/cd8fff9c-2983-721b-f4ad-9e6b7c380d19/mzl.mvlfiuis.75x75-65.jpg" />
+										<ul data-role="listview" data-theme="d" data-inset="true">
+											<li>
+												
+												<img width="75px" height="75px" src="http://a5.mzstatic.com/us/r1000/062/Video2/v4/cd/8f/ff/cd8fff9c-2983-721b-f4ad-9e6b7c380d19/mzl.mvlfiuis.75x75-65.jpg" />
+												<h3>Defiance</h3>
+												<p class="ui-li-aside"><strong>3/4/2013</strong></p>
+												<p>Third person open world MMO</p>
+												</a>
+											</li>
+										</ul>
+								</li>
+							</div>
+							<div class="ui-block-b">
+							<li>
+								<img width="75px" height="75px" src="http://brainplayonline.com/wp-content/uploads/2013/03/2013-games-preview-tomb-raider.jpg-75x75.png" />
+									<ul data-role="listview" data-theme="d" data-inset="true">
+										<li>
+											<img width="75px" height="75px" src="http://brainplayonline.com/wp-content/uploads/2013/03/2013-games-preview-tomb-raider.jpg-75x75.png" />
+											<h3>tomb raider</h3>
+											<p class="ui-li-aside"><strong>2/14/2013</strong></p>
+											<p>Survival action game.</p>
+											</a>
+										</li>
+									</ul>
+							</li>
+						</div>
+						</div>	
+						<div class="ui-grid-a">
+							<div class="ui-block-a">
+							<li>
+								<img width="75px" height="75px" src="http://content.tl-static.com/site/img/75x75/imagine-dragons-tickets-75x75.jpg" />
+								<ul data-role="listview" data-theme="d" data-inset="true">
+									<li>
+										
+										<img width="75px" height="75px" src="http://content.tl-static.com/site/img/75x75/imagine-dragons-tickets-75x75.jpg" />
+										<h3>Imagine dragons</h3>
+										<p class="ui-li-aside"><strong>2/20/2013</strong></p>
+										<p>American alternative rock band.</p>
+										</a>
+									</li>
+								</ul>
+							</li>
+						</div>
+						<div class="ui-block-b">
+							<li>
+								<img width="75px" height="75px" src="http://a2.mzstatic.com/us/r1000/077/Purple/v4/f6/65/78/f66578fc-3761-f97b-d84b-74c37a9637e2/AppIcon.75x75-65.png" />
+								<ul data-role="listview" data-theme="d" data-inset="true">
+									<li>
+										
+										<img width="75px" height="75px" src="http://a2.mzstatic.com/us/r1000/077/Purple/v4/f6/65/78/f66578fc-3761-f97b-d84b-74c37a9637e2/AppIcon.75x75-65.png" />
+										<h3>Borderlands 2</h3>
+										<p class="ui-li-aside"><strong>4/6/2013</strong></p>
+										<p>First person open world RPG.</p>
+										</a>
+									</li>
+								</ul>
+							</li>
+						</div>
+					</div>
+					</ul>
+				</center>
+			</section>
+		</div>
+		<div data-role="footer" data-position="fixed">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#home" id="home" rel="external" data-ajax="false" data-inline="true" data-icon="home" data-add-back-btn="true"/>Home</a></li>
+					<li><a href="#items" id="displayLink" rel="internal" data-ajax="false" data-inline="true" data-icon="search" data-role="button" data-add-back-btn="true" />Search</a></li>
+					<li><a href="#browse" id="browse" rel="internal" data-ajax="false" data-inline="true" data-icon="check" data-role="button" />Browse</a></li>					
+					<li><a href="#contact"  id="contact" rel="external" data-ajax="false" data-inline="true" data-icon="grid" data-add-back-btn="true"/>Contact</a></li>
+					<li><a href="#info" id="info" rel="internal" data-ajax="false" data-inline="true" data-icon="info" data-add-back-btn="true"/>Info</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	
+	<div data-role="page" id="info" data-theme="d" data-add-back-btn="true"> 
+		<div data-role="header">
+				<h1><a href="#home" class="logoAlign">Media library</a></h1>
+				<small><center>Media library</center></small>	
+		</div>
+		<div data-role="content">
+			<p>
+			<center>
+				<a href="https://github.com/b42626/MiU3/tree/master/gold" rel="external" data-ajax="false" data-role="button" data-mini="true" data-icon="star" data-inline="true" data-theme="e">gold Code</a><br/>
+				<a href="http://b42626.github.io/MiU3" rel="external" data-ajax="false" data-role="button" data-mini="true" data-icon="star" data-inline="true" data-theme="e">gold Live</a><br/>
+				<a href="https://github.com/b42626/MiU3/tree/master/bronze" rel="external" data-ajax="false" data-role="button" data-mini="true" data-icon="star" data-inline="true" data-theme="e">bronze Code</a><br/>
+				<a href="http://b42626.github.io/MiU3" rel="external" data-ajax="false" data-role="button" data-mini="true" data-icon="star" data-inline="true" data-theme="e">bronze Live</a><br/>
+			</center>
+			</p>
+		</div>
+		<div data-role="footer" data-position="fixed">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#home" id="home" rel="external" data-ajax="false" data-inline="true" data-icon="home" data-add-back-btn="true"/>Home</a></li>
+					<li><a href="#items" id="displayLink" rel="internal" data-ajax="false" data-inline="true" data-icon="search" data-role="button" data-add-back-btn="true" />Search</a></li>
+					<li><a href="#browse" id="browse" rel="internal" data-ajax="false" data-inline="true" data-icon="check" data-role="button" />Browse</a></li>					
+					<li><a href="#contact"  id="contact" rel="external" data-ajax="false" data-inline="true" data-icon="grid" data-add-back-btn="true"/>Contact</a></li>
+					<li><a href="#info" id="info" class="ui-btn-active"  rel="internal" data-ajax="false" data-inline="true" data-icon="info" data-add-back-btn="true"/>Info</a></li>
+				</ul>
+			</div>
+		</div>
+	</div><
+
+	
+	
+	<script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.js"></script>
+	
+	
+	<script src="js/libs/jquery.validate.min.js"></script>
+	<script src="jQuery.ui.datepicker.js"></script>
+	<script src="jquery.ui.datepicker.mobile.js"></script>
+
+		
+	<script type="text/javascript" src="js/json.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+	
+	</body>
+</html>

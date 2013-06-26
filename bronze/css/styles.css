@@ -1,0 +1,84 @@
+/*
+   Matt nowakowski
+   MIU
+   term 1306
+   Project 4
+*/
+
+/*
+	project type icons are 35 x 35
+	project screenshots are 75 x 75
+	Vertical Stack Design Concept
+	with JQuery Mobile
+	Feature: top center
+	Search:  middle top center
+	Browse:  center bottom
+*/
+
+body {
+	color: orange;
+	font-face: Verdana;
+}
+
+h1 {
+	color: yellow;
+}
+
+#logoAlign{
+	position: fixed;
+	z-index: 1;
+	text-decoration: none;
+	font-size: 13px;
+	align: left;
+}
+a:h1 {
+	color: green;
+}
+
+a:link {
+	text-decoration: none;
+	color: orange;
+}
+
+label.error{
+	
+	display: block;
+	margin: 10px 0;
+	color: #ff6000;
+}
+
+li {
+	list-style-type: none;
+	margin: 3px 0;
+}
+
+button#submit {
+	display: inline;
+	text-align: left;
+	width: 55px;
+	height: 25px;
+	margin: 3px 3px 3px 3px;
+}
+
+a#clear {
+	display: inline;
+	text-align: center;
+	font-size: 25px;
+	font-variant: small-caps;
+	font-weight: bold;
+	width: 100%;
+	color: orange;
+	margin: 13px 13px 13px 13px;
+}	
+
+header {
+	align: left;
+}
+
+.ui-body {
+	
+}
+
+.ui-page {
+    background-image: url("../images/deep_backgrounds/ugly.jpg");
+}
