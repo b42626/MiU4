@@ -4,11 +4,11 @@
   <head>
     <meta charset='utf-8' />
     <meta http-equiv="X-UA-Compatible" content="chrome=1" />
-    <meta name="description" content="Miu4 : " />
+    <meta name="description" content="bronze : " />
 
     <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
 
-    <title>Miu4</title>
+    <title>bronze</title>
   </head>
 
   <body>
@@ -18,7 +18,7 @@
         <header class="inner">
           <a id="forkme_banner" href="https://github.com/b42626/MiU4">View on GitHub</a>
 
-          <h1 id="project_title">Miu4</h1>
+          <h1 id="project_title">bronze</h1>
           <h2 id="project_tagline"></h2>
 
             <section id="downloads">
@@ -33,14 +33,18 @@
       <section id="main_content" class="inner">
         <p>
     </p>
-        Media library<pre><code>    &lt;link href='http://fonts.googleapis.com/css?family=Parisienne' rel='stylesheet' type='text/css'&gt;
 
+<pre><code>    &lt;meta charset="utf-8"&gt;
+
+    &lt;title&gt;Media library&lt;/title&gt;
     &lt;meta name="HandheldFriendly" content="True"&gt;
     &lt;meta name="MobileOptimized" content="320"/&gt;
     &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
 
-
     &lt;meta http-equiv="cleartype" content="on"&gt;
+
+   &lt;meta http-equiv="cleartype" content="on"&gt;
+
     &lt;link rel="stylesheet" href="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.css" /&gt;
 
     &lt;link rel="stylesheet" href="jquery.ui.datepicker.mobile.css" /&gt; 
@@ -50,334 +54,171 @@
 
 
     &lt;link rel="stylesheet" href="css/styles.css" /&gt;
-
-&lt;/head&gt;
 &lt;/head&gt;
 &lt;body&gt;
 
-&lt;div data-role="page" id="home" data-theme="d" data-add-back-btn="true"&gt;
-    &lt;div data-role="header"&gt;
-        &lt;h1&gt;&lt;a href="#home"&gt;Media library&lt;/a&gt;&lt;/h1&gt;
-    &lt;/div&gt;
-    &lt;div data-role="content"&gt;   
-        &lt;small&gt;&lt;center&gt;Media library.&lt;/center&gt;&lt;/small&gt;
-        &lt;br /&gt;
-        &lt;center&gt;
-            &lt;section id="feature"&gt;
-                &lt;a href="#latest"&gt;&lt;img src="images/feature_image_with_cta.svg" width="120px" height="126px" border="0" /&gt;&lt;/a&gt;
-            &lt;/section&gt;
-            &lt;a href="#latest" id="latest" rel="internal" data-ajax="false" data-inline="true" data-icon="star" data-role="button" data-add-back-btn="true" data-theme="b" /&gt;Latest&lt;/a&gt;&lt;br /&gt;
-            &lt;a href="#additem" id="addNew" rel="internal" data-ajax="false" data-inline="true" data-icon="plus" data-role="button" data-add-back-btn="true" data-theme="b" /&gt;Add New&lt;/a&gt;&lt;br /&gt;
-            &lt;a href="#clear" id="clear" rel="internal" data-ajax="false" data-inline="true" data-rel="dialog" data-add-back-btn="true" /&gt;delete all&lt;/a&gt;
-        &lt;/center&gt;
-    &lt;/div&gt;
-    &lt;div data-role="footer" data-position="fixed"&gt;
-        &lt;div data-role="navbar"&gt;
-            &lt;ul&gt;
-                &lt;li&gt;&lt;a href="#home" id="home" class="ui-btn-active" rel="internal" data-ajax="false" data-inline="true" data-icon="home" data-add-back-btn="true" /&gt;Home&lt;/a&gt;&lt;/li&gt;
-                &lt;li&gt;&lt;a href="#items" id="displayLink" rel="internal" data-ajax="false" data-inline="true" data-icon="search" data-add-back-btn="true" /&gt;Search&lt;/a&gt;&lt;/li&gt;
-                &lt;li&gt;&lt;a href="#browse" id="browse" rel="internal" data-ajax="false" data-inline="true" data-icon="check" data-add-back-btn="true" /&gt;Browse&lt;/a&gt;&lt;/li&gt;                  
-                &lt;li&gt;&lt;a href="#contact"  id="contact" rel="internal" data-ajax="false" data-inline="true" data-icon="grid" data-add-back-btn="true" /&gt;Contact&lt;/a&gt;&lt;/li&gt;
-                &lt;li&gt;&lt;a href="#info" id="info" rel="internal" data-ajax="false" data-inline="true" data-icon="info" data-add-back-btn="true" /&gt;Info&lt;/a&gt;&lt;/li&gt;
-            &lt;/ul&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-&lt;/div&gt;
+    &lt;div data-role="page" id="home" data-theme="a"&gt;
 
-&lt;div data-role="page" id="additem" data-theme="d" data-add-back-btn="true"&gt;
-    &lt;div data-role="header" data-theme="a"&gt;
-        &lt;h1&gt;&lt;a href="#home" class="logoAlign"&gt;Media library&lt;/a&gt;&lt;/h1&gt;
-        &lt;small&gt;&lt;center&gt;Media library&lt;/center&gt;&lt;/small&gt;   
-    &lt;/div&gt;
-    &lt;div data-role="content"&gt;
-        &lt;section id="addNew"&gt;
-            &lt;center&gt;&lt;h2&gt;Add New Media&lt;/h2&gt;&lt;/center&gt;
-        &lt;/section&gt;
-        &lt;section id="errors"&gt;&lt;/section&gt;
-        &lt;form action="#feature" method="post" id="mediaForm"&gt;
-                &lt;fieldset id="mediaFieldSet"&gt;
-                    &lt;center&gt;&lt;span&gt;&lt;small&gt;* fields required.&lt;/small&gt;&lt;br /&gt;&lt;/span&gt;&lt;/center&gt;
-                        &lt;ul id="media"&gt;
-                            &lt;div data-role="fieldcontain"&gt;
-                                &lt;li id="mtype"&gt;
-                                    &lt;label for="mtype"&gt;* Media Type:&lt;/label&gt;
-                                &lt;/li&gt;
-                            &lt;/div&gt;
-                            &lt;div data-role="fieldcontain"&gt;
-                                &lt;li id="mdate"&gt;
-                                    &lt;label for="mdate"&gt;* Media Date: &lt;/label&gt; 
-                                    &lt;input type="date" id="mdate" class="required" value="01/01/2013" /&gt;
-                                &lt;/li&gt;
-                            &lt;/div&gt;
-                            &lt;div data-role="fieldcontain"&gt;
-                                &lt;li id="mname"&gt;
-                                    &lt;label for="mname"&gt;* Media Name: &lt;/label&gt;
-                                    &lt;input type="text" id="mname" class="required" value="Name of media" /&gt;
-                                &lt;/li&gt;
-                            &lt;/div&gt;
+        &lt;div data-role="header" data-position="fixed"&gt;
 
-                                &lt;div data-role="collapsible"&gt;
-                                &lt;h3&gt;Additional options&lt;/h3&gt;
-                                    &lt;div data-role="fieldcontain"&gt;
-                                        &lt;li id="mediarating"&gt;&lt;label for="mrating"&gt;Media Rating: &lt;/label&gt;
-                                            &lt;input type="range" min="1" max="10" name="rating" value="5" id="mrating" /&gt;
-                                            &lt;br /&gt;
-                                            &lt;div id="hint"&gt;0 = Poor. 10 = Great.&lt;/div&gt;
-                                        &lt;/li&gt;
-                                    &lt;/div&gt;
-                                    &lt;div data-role="fieldcontain"&gt;
-                                        &lt;fieldset data-role="controlgroup"&gt;
-                                            &lt;li id="mediatopics"&gt;
-                                            &lt;label for="mtopic"&gt;
-                                                &lt;legend&gt;Media format:&lt;/legend&gt;
-                                            &lt;/label&gt; 
-                                                &lt;input type="radio" value="cd" id="cd" name="mtopics" checked /&gt;
-                                                &lt;label for="cd"&gt;cd&lt;/label&gt;
-
-                                                &lt;input type="radio" value="dvd" id="dvd" name="mtopics" /&gt;
-                                                &lt;label for="dvd"&gt;dvd&lt;/label&gt;
-
-                                                &lt;input type="radio" value="bluray" id="bluray" name="mtopics" /&gt;
-                                                &lt;label for="bluray"&gt;bluray&lt;/label&gt;
-                                                &lt;br /&gt;
-                                            &lt;/li&gt;
-                                        &lt;/fieldset&gt;
-                                    &lt;/div&gt;
-                                    &lt;div data-role="fieldcontain"&gt;
-                                        &lt;li id="mediatags"&gt;
-                                            &lt;label for="mtags"&gt;Media Tags:&lt;/label&gt;
-                                            &lt;input type="text" id="mtags" value="Keywords separated by a space." /&gt;
-                                        &lt;/li&gt;
-                                    &lt;/div&gt;
-                                    &lt;div data-role="fieldcontain"&gt;
-                                        &lt;li id="mediagraphic"&gt;
-                                            &lt;label for="mgraphic"&gt;Image&lt;/label&gt;
-                                            &lt;input type="text" id="mgraphic" value="http:" /&gt;
-                                        &lt;/li&gt;
-                                    &lt;/div&gt;
-                                    &lt;div data-role="fieldcontain"&gt;
-                                        &lt;li id="mediacomments"&gt;
-                                            &lt;label for="mcomments"&gt;Comments:&lt;/label&gt;
-                                            &lt;textarea id="mcomments" value="Feelings towards the media" /&gt;comment here.&lt;/textarea&gt;
-                                        &lt;/li&gt;
-                                    &lt;/div&gt;
-                                &lt;/div&gt;
-
-                        &lt;/ul&gt;
-                            &lt;div data-role="fieldcontain"&gt;
-                                &lt;input type="submit" data-theme="e" value="Save Media" id="submit" data-mini="true" align="left" /&gt;
-                                &lt;input type="reset" data-theme="C" value="reset" /&gt; 
-                            &lt;/div&gt;
-                &lt;/fieldset&gt;
-            &lt;/form&gt;
-    &lt;/div&gt;
-    &lt;div data-role="footer" data-position="fixed"&gt;
-        &lt;div data-role="navbar"&gt;
-            &lt;ul&gt;
-                &lt;li&gt;&lt;a href="#home" id="home" rel="internal" data-ajax="false" data-inline="true" data-icon="home" data-add-back-btn="true"/&gt;Home&lt;/a&gt;&lt;/li&gt;
-                &lt;li&gt;&lt;a href="#items" id="displayLink" class="ui-btn-active" rel="internal" data-ajax="false" data-inline="true" data-icon="search" data-role="button" data-add-back-btn="true" /&gt;Search&lt;/a&gt;&lt;/li&gt;
-                &lt;li&gt;&lt;a href="#browse" id="browse" rel="internal" data-ajax="false" data-inline="true" data-icon="check" data-add-back-btn="true" /&gt;Browse&lt;/a&gt;&lt;/li&gt;                  
-                &lt;li&gt;&lt;a href="#contact"  id="contact" rel="external" data-ajax="false" data-inline="true" data-icon="grid" data-add-back-btn="true"/&gt;Contact&lt;/a&gt;&lt;/li&gt;
-                &lt;li&gt;&lt;a href="#info" id="info" rel="internal" data-ajax="false" data-inline="true" data-icon="info" data-add-back-btn="true"/&gt;Info&lt;/a&gt;&lt;/li&gt;
-            &lt;/ul&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;&lt;
-&lt;/div&gt;
-
-&lt;div data-role="page" id="contact" data-theme="d" data-add-back-btn="true"&gt;
-    &lt;div data-role="header"&gt;
-            &lt;h1&gt;&lt;a href="#home" class="logoAlign"&gt;Media library&lt;/a&gt;&lt;/h1&gt;
-            &lt;small&gt;&lt;center&gt;Media library&lt;/center&gt;&lt;/small&gt;   
-    &lt;/div&gt;
-    &lt;div data-role="content"&gt;
-        &lt;section id="newStream"&gt;
-            &lt;h2&gt;Contact&lt;/h2&gt;
-                &lt;ul data-role="listview" data-inset="true"&gt;
-                    &lt;li&gt;
-
-                            &lt;p&gt;
-                            Matt Nowakowski&lt;br/&gt;
-                            Student&lt;br/&gt; 
-                            &lt;/p&gt;
-                        &lt;/a&gt;
-                    &lt;/li&gt;
-                    &lt;li&gt;
-                        &lt;a href="http://www.FullSail.edu"&gt;
-                            &lt;p&gt;
-                            Full Sail University&lt;br/&gt;
-                            Online Mobile Development&lt;br/&gt;
-                            &lt;/p&gt;
-                        &lt;/a&gt;
-                    &lt;/li&gt;
-                &lt;/ul&gt;
-
-
-        &lt;/section&gt;
-    &lt;/div&gt;
-    &lt;div data-role="footer" data-position="fixed"&gt;
-        &lt;div data-role="navbar"&gt;
-            &lt;ul&gt;
-                &lt;li&gt;&lt;a href="#home" id="home" rel="internal" data-ajax="false" data-inline="true" data-icon="home" data-add-back-btn="true"/&gt;Home&lt;/a&gt;&lt;/li&gt;
-                &lt;li&gt;&lt;a href="#items" id="displayLink" rel="internal" data-ajax="false" data-inline="true" data-icon="search" data-add-back-btn="true" /&gt;Search&lt;/a&gt;&lt;/li&gt;
-                &lt;li&gt;&lt;a href="#browse" id="browse" rel="internal" data-ajax="false" data-inline="true" data-icon="check" data-add-back-btn="true" /&gt;Browse&lt;/a&gt;&lt;/li&gt;                  
-                &lt;li&gt;&lt;a href="#contact"  id="contact" class="ui-btn-active" rel="external" data-ajax="false" data-inline="true" data-icon="grid" data-add-back-btn="true"/&gt;Contact&lt;/a&gt;&lt;/li&gt;
-                &lt;li&gt;&lt;a href="#info" id="info" rel="internal" data-ajax="false" data-inline="true" data-icon="info" data-add-back-btn="true"/&gt;Info&lt;/a&gt;&lt;/li&gt;
-            &lt;/ul&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div data-role="page" id="browse" data-theme="d" data-add-back-btn="true"&gt;
-    &lt;div data-role="header"&gt;
-            &lt;h1&gt;&lt;a href="#home" class="logoAlign"&gt;Media library&lt;/a&gt;&lt;/h1&gt;
-            &lt;small&gt;&lt;center&gt;Media library&lt;/center&gt;&lt;/small&gt;   
-    &lt;/div&gt;
-    &lt;div data-role="content"&gt;
-        &lt;section id="browse"&gt;
-            &lt;h3&gt;Browse Media&lt;/h3&gt;
-                &lt;ul data-role="listview" data-inset="true" data-theme="d"&gt;
-                    &lt;li data-filtertext="Xbox"&gt;&lt;a href="#items" id="displayXboxLink" data-filter-placeholder="xbox" rel="internal" data-ajax="false"&gt;&lt;img src="images/Xbox.jpg" border="0" width="35" height="35" alt="Browse Xbox "/&gt;Xbox&lt;/a&gt;&lt;/li&gt;
-                    &lt;li data-filtertext="Playstation"&gt;&lt;a href="#items" data-filter-placeholder="Playstation" id="displayPlaystationLink" rel="internal" data-ajax="false"&gt;&lt;img src="images/Playstation.jpg" border="0" width="35" height="35" alt="Browse Playstation"/&gt;Playstation&lt;/a&gt;&lt;/li&gt;
-                    &lt;li data-filtertext="Music"&gt;&lt;a href="#items" data-filter-placeholder="Music" id="displayMusicLink" rel="internal" data-ajax="false"&gt;&lt;img src="images/Music.jpg" border="0" width="35" height="35" alt="Browse Music"/&gt;Music&lt;/a&gt;&lt;/li&gt;            
-                    &lt;li data-filtertext="wii u" &gt;&lt;a href="#items" data-filter-placeholder="wiiu" id="displayWiiuLink" rel="internal" data-ajax="false"&gt;&lt;img src="images/wiiu.jpg" border="0" width="35" height="35" alt="Browse Wii u"/&gt;wii u&lt;/a&gt;&lt;/li&gt;          
-                    &lt;li data-filtertext="PC"&gt;&lt;a href="#items" data-filter-placeholder="pc" id="displayPcLink" rel="internal" data-ajax="false"&gt;&lt;img src="images/PC.jpg" border="0" width="35" height="35" alt="Browse PC"/&gt;PC&lt;/a&gt;&lt;/li&gt;          
-                    &lt;li data-filtertext="Movie"&gt;&lt;a href="#items" data-filter-placeholder="movie" id="displayMovieLink" rel="internal" data-ajax="false"&gt;&lt;img src="images/Movie.jpg" border="0" width="35" height="35" alt="Browse Movie"/&gt;Movie&lt;/a&gt;&lt;/li&gt;            
-                &lt;/ul&gt;
-        &lt;/section&gt;
-    &lt;/div&gt;
-    &lt;div data-role="footer" data-position="fixed"&gt;
-        &lt;div data-role="navbar"&gt;
-            &lt;ul&gt;
-                &lt;li&gt;&lt;a href="#home" id="home" rel="external" data-ajax="false" data-inline="true" data-icon="home" data-add-back-btn="true"/&gt;Home&lt;/a&gt;&lt;/li&gt;
-                &lt;li&gt;&lt;a href="#items" id="displayLink" rel="internal" data-ajax="false" data-inline="true" data-icon="search" data-role="button" data-add-back-btn="true" /&gt;Search&lt;/a&gt;&lt;/li&gt;
-                &lt;li&gt;&lt;a href="#browse" id="browse" class="ui-btn-active" rel="internal" data-ajax="false" data-inline="true" data-icon="check" data-role="button" /&gt;Browse&lt;/a&gt;&lt;/li&gt;                  
-                &lt;li&gt;&lt;a href="#contact"  id="contact" rel="external" data-ajax="false" data-inline="true" data-icon="grid" data-add-back-btn="true"/&gt;Contact&lt;/a&gt;&lt;/li&gt;
-                &lt;li&gt;&lt;a href="#info" id="info" rel="internal" data-ajax="false" data-inline="true" data-icon="info" data-add-back-btn="true"/&gt;Info&lt;/a&gt;&lt;/li&gt;
-            &lt;/ul&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;&lt;
-&lt;/div&gt;
-
-&lt;div data-role="page" id="latest" data-theme="d" data-add-back-btn="true"&gt;
-    &lt;div data-role="header"&gt;
-            &lt;h1&gt;&lt;a href="#home" class="logoAlign"&gt;Media library&lt;/a&gt;&lt;/h1&gt;
-            &lt;small&gt;&lt;center&gt;Media library&lt;/center&gt;&lt;/small&gt;   
-    &lt;/div&gt;
-    &lt;div data-role="content"&gt;
-        &lt;section id="newStream"&gt;
-            &lt;center&gt;
-            &lt;h2&gt;Newest Media&lt;/h2&gt;
-
-                &lt;ul data-role="listview" data-theme="d" data-inset="true" data-back-btn="true"&gt;
-
-                    &lt;div class="ui-grid-a"&gt;
-                        &lt;div class="ui-block-a"&gt;
-                            &lt;li&gt;
-                                &lt;img width="75px" height="75px" src="http://a5.mzstatic.com/us/r1000/062/Video2/v4/cd/8f/ff/cd8fff9c-2983-721b-f4ad-9e6b7c380d19/mzl.mvlfiuis.75x75-65.jpg" /&gt;
-                                    &lt;ul data-role="listview" data-theme="d" data-inset="true"&gt;
-                                        &lt;li&gt;
-
-                                            &lt;img width="75px" height="75px" src="http://a5.mzstatic.com/us/r1000/062/Video2/v4/cd/8f/ff/cd8fff9c-2983-721b-f4ad-9e6b7c380d19/mzl.mvlfiuis.75x75-65.jpg" /&gt;
-                                            &lt;h3&gt;Defiance&lt;/h3&gt;
-                                            &lt;p class="ui-li-aside"&gt;&lt;strong&gt;3/4/2013&lt;/strong&gt;&lt;/p&gt;
-                                            &lt;p&gt;Third person open world MMO&lt;/p&gt;
-                                            &lt;/a&gt;
-                                        &lt;/li&gt;
-                                    &lt;/ul&gt;
-                            &lt;/li&gt;
-                        &lt;/div&gt;
-                        &lt;div class="ui-block-b"&gt;
-                        &lt;li&gt;
-                            &lt;img width="75px" height="75px" src="http://brainplayonline.com/wp-content/uploads/2013/03/2013-games-preview-tomb-raider.jpg-75x75.png" /&gt;
-                                &lt;ul data-role="listview" data-theme="d" data-inset="true"&gt;
-                                    &lt;li&gt;
-                                        &lt;img width="75px" height="75px" src="http://brainplayonline.com/wp-content/uploads/2013/03/2013-games-preview-tomb-raider.jpg-75x75.png" /&gt;
-                                        &lt;h3&gt;tomb raider&lt;/h3&gt;
-                                        &lt;p class="ui-li-aside"&gt;&lt;strong&gt;2/14/2013&lt;/strong&gt;&lt;/p&gt;
-                                        &lt;p&gt;Survival action game.&lt;/p&gt;
-                                        &lt;/a&gt;
-                                    &lt;/li&gt;
-                                &lt;/ul&gt;
-                        &lt;/li&gt;
-                    &lt;/div&gt;
-                    &lt;/div&gt;  
-                    &lt;div class="ui-grid-a"&gt;
-                        &lt;div class="ui-block-a"&gt;
-                        &lt;li&gt;
-                            &lt;img width="75px" height="75px" src="http://content.tl-static.com/site/img/75x75/imagine-dragons-tickets-75x75.jpg" /&gt;
-                            &lt;ul data-role="listview" data-theme="d" data-inset="true"&gt;
-                                &lt;li&gt;
-
-                                    &lt;img width="75px" height="75px" src="http://content.tl-static.com/site/img/75x75/imagine-dragons-tickets-75x75.jpg" /&gt;
-                                    &lt;h3&gt;Imagine dragons&lt;/h3&gt;
-                                    &lt;p class="ui-li-aside"&gt;&lt;strong&gt;2/20/2013&lt;/strong&gt;&lt;/p&gt;
-                                    &lt;p&gt;American alternative rock band.&lt;/p&gt;
-                                    &lt;/a&gt;
-                                &lt;/li&gt;
-                            &lt;/ul&gt;
-                        &lt;/li&gt;
-                    &lt;/div&gt;
-                    &lt;div class="ui-block-b"&gt;
-                        &lt;li&gt;
-                            &lt;img width="75px" height="75px" src="http://a2.mzstatic.com/us/r1000/077/Purple/v4/f6/65/78/f66578fc-3761-f97b-d84b-74c37a9637e2/AppIcon.75x75-65.png" /&gt;
-                            &lt;ul data-role="listview" data-theme="d" data-inset="true"&gt;
-                                &lt;li&gt;
-
-                                    &lt;img width="75px" height="75px" src="http://a2.mzstatic.com/us/r1000/077/Purple/v4/f6/65/78/f66578fc-3761-f97b-d84b-74c37a9637e2/AppIcon.75x75-65.png" /&gt;
-                                    &lt;h3&gt;Borderlands 2&lt;/h3&gt;
-                                    &lt;p class="ui-li-aside"&gt;&lt;strong&gt;4/6/2013&lt;/strong&gt;&lt;/p&gt;
-                                    &lt;p&gt;First person open world RPG.&lt;/p&gt;
-                                    &lt;/a&gt;
-                                &lt;/li&gt;
-                            &lt;/ul&gt;
-                        &lt;/li&gt;
-                    &lt;/div&gt;
-                &lt;/div&gt;
-                &lt;/ul&gt;
+           &lt;/center&gt;
+           &lt;p&gt;&lt;a href="#home"&gt;Media library&lt;/a&gt;&lt;/p&gt;
             &lt;/center&gt;
-        &lt;/section&gt;
-    &lt;/div&gt;
-    &lt;div data-role="footer" data-position="fixed"&gt;
-        &lt;div data-role="navbar"&gt;
-            &lt;ul&gt;
-                &lt;li&gt;&lt;a href="#home" id="home" rel="external" data-ajax="false" data-inline="true" data-icon="home" data-add-back-btn="true"/&gt;Home&lt;/a&gt;&lt;/li&gt;
-                &lt;li&gt;&lt;a href="#items" id="displayLink" rel="internal" data-ajax="false" data-inline="true" data-icon="search" data-role="button" data-add-back-btn="true" /&gt;Search&lt;/a&gt;&lt;/li&gt;
-                &lt;li&gt;&lt;a href="#browse" id="browse" rel="internal" data-ajax="false" data-inline="true" data-icon="check" data-role="button" /&gt;Browse&lt;/a&gt;&lt;/li&gt;                    
-                &lt;li&gt;&lt;a href="#contact"  id="contact" rel="external" data-ajax="false" data-inline="true" data-icon="grid" data-add-back-btn="true"/&gt;Contact&lt;/a&gt;&lt;/li&gt;
-                &lt;li&gt;&lt;a href="#info" id="info" rel="internal" data-ajax="false" data-inline="true" data-icon="info" data-add-back-btn="true"/&gt;Info&lt;/a&gt;&lt;/li&gt;
+
+        &lt;/div&gt;
+
+        &lt;div data-role="content"&gt;
+
+            &lt;center&gt;
+            &lt;p&gt;&lt;a href="additem.html" id="addNew"&gt;&lt;img src="images/feature_image_with_cta.svg" width="200px" height="200px"&gt;&lt;/a&gt;&lt;/p&gt;
+            &lt;/center&gt;
+
+            &lt;h3&gt;Browse Media&lt;/h3&gt;
+            &lt;ul data-role="listview" data-inset="true" data-ajax="false"&gt;
+                &lt;li&gt;&lt;a href="#browse" id="browseButton" border="0" width="35" height="35" alt="Browse"&gt;Browse&lt;/a&gt;&lt;/li&gt;
             &lt;/ul&gt;
+
+            &lt;h3&gt;New media added&lt;/h3&gt;
+            &lt;div data-role="collapsible-set" data-inset="true"&gt;
+
+                        &lt;div data-role="collapsible" data-collapsed="true"&gt;
+                            &lt;h3&gt;Defiance&lt;/h3&gt;
+                            &lt;p&gt; Third person open world MMO&lt;/p&gt;
+                        &lt;/div&gt;
+
+                        &lt;div data-role="collapsible" data-collapsed="true"&gt;
+                            &lt;h3&gt;Tomb Raider&lt;/h3&gt;
+                            &lt;p&gt;&lt;strong&gt;Survival action game.&lt;/strong&gt;&lt;/p&gt;
+                        &lt;/div&gt;
+
+                        &lt;div data-role="collapsible" data-collapsed="true"&gt;
+                            &lt;h3&gt;Imagine dragons&lt;/h3&gt;
+                            &lt;p&gt;&lt;strong&gt;American alternative rock band.&lt;/strong&gt;&lt;/p&gt;
+                        &lt;/div&gt;
+
+                        &lt;div data-role="collapsible" data-collapsed="true"&gt;
+                            &lt;h3&gt;Borderlands 2&lt;/h3&gt;
+                            &lt;p&gt;&lt;strong&gt;First person open world RPG.&lt;/strong&gt;&lt;/p&gt;
+                        &lt;/div&gt;
+
+            &lt;/div&gt;
+
+        &lt;/div&gt;
+
+        &lt;div data-role="footer" data-position="fixed"&gt;
+
+            &lt;div data-role="navbar" data-icon-pos="top"&gt;
+                &lt;ul&gt;
+                    &lt;li&gt;&lt;a href="additem.html" rel="external" data-ajax="false" data-inline="true" data-icon="plus" data-add-back-btn="true"&gt;Add&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="#browse" id="browseButton" rel="external" data-ajax="false" data-inline="true" data-icon="grid" data-add-back-btn="true"&gt;Browse&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="#links" id="linksButton" rel="internal" data-ajax="true" data-inline="true" data-icon="info" data-add-back-btn="true"&gt;Links&lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/div&gt;
         &lt;/div&gt;
     &lt;/div&gt;
-&lt;/div&gt;
 
-&lt;div data-role="page" id="info" data-theme="d" data-add-back-btn="true"&gt; 
-    &lt;div data-role="header"&gt;
-            &lt;h1&gt;&lt;a href="#home" class="logoAlign"&gt;Media library&lt;/a&gt;&lt;/h1&gt;
-            &lt;small&gt;&lt;center&gt;Media library&lt;/center&gt;&lt;/small&gt;   
+    &lt;div data-role="page" id="browse" data-add-back-btn="true" data-theme="a"&gt;
+
+        &lt;div data-role="header" data-position="fixed"&gt;
+
+            &lt;center&gt;
+                &lt;p&gt;&lt;a href="#home"&gt;Media library&lt;/a&gt;&lt;/p&gt;
+            &lt;/center&gt;
+
+        &lt;/div&gt;
+
+        &lt;div data-role="content"&gt;
+
+
+                &lt;h3&gt;Create load out&lt;/h3&gt;
+                &lt;div data-role="listview" class="ui-grid-b" data-inset="true" data-filter="true"&gt;
+                    &lt;div class="ui-block-a"&gt;&lt;a href="#browse2" data-filter="Xbox" id="Xbox"&gt;&lt;img src="images/Xbox.jpg" border="0" width="35" height="35" alt="Browse Xbox" data-role="button"&gt;&lt;/br&gt;Browse Xbox&lt;/a&gt;&lt;/div&gt;
+                    &lt;div class="ui-block-b"&gt;&lt;a href="#browse2" data-filter="Playstation" id="Playsation"&gt;&lt;img src="images/Playstation.jpg" border="0" width="35" height="35" alt="Browse Playstation" data-role="button"&gt;&lt;/br&gt;Browse Playstation&lt;/a&gt;&lt;/div&gt;
+                    &lt;div class="ui-block-c"&gt;&lt;a href="#browse2" data-filter="wiiu" id="Wiiu"&gt;&lt;img src="images/Wiiu.jpg" border="0" width="35" height="35" alt="Browse Wii u" data-role="button"&gt;&lt;/br&gt;Browse Wii u&lt;/a&gt;&lt;/div&gt;
+                    &lt;div class="ui-block-a"&gt;&lt;a href="#browse2" data-filter="PC" id="PC"&gt;&lt;img src="images/PC.jpg" border="0" width="35" height="35" alt="Browse PC" data-role="button"&gt;&lt;/br&gt;Browse PC&lt;/a&gt;&lt;/div&gt;
+                    &lt;div class="ui-block-b"&gt;&lt;a href="#browse2" data-filter="Movie" id="Movie"&gt;&lt;img src="images/Movie.jpg" border="0" width="35" height="35" alt="Browse Movies" data-role="button"&gt;&lt;/br&gt;Browse Movies&lt;/a&gt;&lt;/div&gt;
+                    &lt;div class="ui-block-c"&gt;&lt;a href="#browse2" data-filter="Music" id="Music"&gt;&lt;img src="images/Music.jpg" border="0" width="35" height="35" alt="Browse Music" data-role="button"&gt;&lt;/br&gt;Browse Music&lt;/a&gt;&lt;/div&gt;
+
+                &lt;/ul&gt;
+            &lt;/div&gt;
+
+        &lt;/div&gt;
+
+        &lt;div data-role="footer"&gt;
+            &lt;div data-role="navbar" data-icon-pos="top"&gt;
+                &lt;ul&gt;
+                    &lt;li&gt;&lt;a href="additem.html" rel="external" data-ajax="false" data-inline="true" data-icon="plus" data-add-back-btn="true"&gt;Add&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="#browse" id="browseButton" rel="external" data-ajax="false" data-inline="true" data-icon="grid" data-add-back-btn="true"&gt;Browse&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="#links" id="linksButton" rel="internal" data-ajax="true" data-inline="true" data-icon="info" data-add-back-btn="true"&gt;Links&lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
     &lt;/div&gt;
-    &lt;div data-role="content"&gt;
-        &lt;p&gt;
-        &lt;center&gt;
-            &lt;a href="https://github.com/b42626/MiU4/tree/master/Gold" rel="external" data-ajax="false" data-role="button" data-mini="true" data-icon="star" data-inline="true" data-theme="e"&gt;gold Code&lt;/a&gt;&lt;br/&gt;
-            &lt;a href="http://b42626.github.io/MiU3" rel="external" data-ajax="false" data-role="button" data-mini="true" data-icon="star" data-inline="true" data-theme="e"&gt;gold Live&lt;/a&gt;&lt;br/&gt;
+
+    &lt;div data-role="page" id="browse2" data-add-back-btn="true" data-theme="a"&gt;
+
+        &lt;div data-role="header" data-position="fixed"&gt;
+
+            &lt;center&gt;
+                &lt;p&gt;&lt;a href="#home"&gt;Media library&lt;/a&gt;&lt;/p&gt;
+            &lt;/center&gt;
+
+        &lt;/div&gt;
+
+        &lt;div data-role="content"&gt;
+
+            &lt;h3&gt;Upcoming games&lt;/h3&gt;
+            &lt;p&gt;Theres no content currently available!&lt;/p&gt;
+
+        &lt;/div&gt;
+
+        &lt;div data-role="footer"&gt;
+            &lt;div data-role="navbar" data-icon-pos="top"&gt;
+                &lt;ul&gt;
+                    &lt;li&gt;&lt;a href="additem.html" rel="external" data-ajax="false" data-inline="true" data-icon="plus" data-add-back-btn="true"&gt;Add&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="#browse" id="browseButton" rel="external" data-ajax="false" data-inline="true" data-icon="grid" data-add-back-btn="true"&gt;Browse&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="#links" id="linksButton" rel="internal" data-ajax="true" data-inline="true" data-icon="info" data-add-back-btn="true"&gt;Links&lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+    &lt;/div&gt;
+
+    &lt;div data-role="page" id="links" data-add-back-btn="true" data-theme="a"&gt;
+
+        &lt;div data-role="header" data-position="fixed"&gt;
+
+            &lt;center&gt;
+                &lt;p&gt;&lt;a href="#home"&gt;media library&lt;/a&gt;&lt;/p&gt;
+            &lt;/center&gt;
+
+        &lt;/div&gt;
+
+        &lt;div data-role="content"&gt;
+
+            &lt;p&gt;
+            &lt;center&gt;
+              &lt;a href="https://github.com/b42626/MiU4/tree/master/Gold" rel="external" data-ajax="false" data-role="button" data-mini="true" data-icon="star" data-inline="true" data-theme="e"&gt;gold Code&lt;/a&gt;&lt;br/&gt;
+            &lt;a href="http://b42626.github.io/MiU4" rel="external" data-ajax="false" data-role="button" data-mini="true" data-icon="star" data-inline="true" data-theme="e"&gt;gold Live&lt;/a&gt;&lt;br/&gt;
             &lt;a href="https://github.com/b42626/MiU4/tree/master/bronze" rel="external" data-ajax="false" data-role="button" data-mini="true" data-icon="star" data-inline="true" data-theme="e"&gt;bronze Code&lt;/a&gt;&lt;br/&gt;
             &lt;a href="http://b42626.github.io/MiU3" rel="external" data-ajax="false" data-role="button" data-mini="true" data-icon="star" data-inline="true" data-theme="e"&gt;bronze Live&lt;/a&gt;&lt;br/&gt;
-        &lt;/center&gt;
-        &lt;/p&gt;
-    &lt;/div&gt;
-    &lt;div data-role="footer" data-position="fixed"&gt;
-        &lt;div data-role="navbar"&gt;
-            &lt;ul&gt;
-                &lt;li&gt;&lt;a href="#home" id="home" rel="external" data-ajax="false" data-inline="true" data-icon="home" data-add-back-btn="true"/&gt;Home&lt;/a&gt;&lt;/li&gt;
-                &lt;li&gt;&lt;a href="#items" id="displayLink" rel="internal" data-ajax="false" data-inline="true" data-icon="search" data-role="button" data-add-back-btn="true" /&gt;Search&lt;/a&gt;&lt;/li&gt;
-                &lt;li&gt;&lt;a href="#browse" id="browse" rel="internal" data-ajax="false" data-inline="true" data-icon="check" data-role="button" /&gt;Browse&lt;/a&gt;&lt;/li&gt;                    
-                &lt;li&gt;&lt;a href="#contact"  id="contact" rel="external" data-ajax="false" data-inline="true" data-icon="grid" data-add-back-btn="true"/&gt;Contact&lt;/a&gt;&lt;/li&gt;
-                &lt;li&gt;&lt;a href="#info" id="info" class="ui-btn-active"  rel="internal" data-ajax="false" data-inline="true" data-icon="info" data-add-back-btn="true"/&gt;Info&lt;/a&gt;&lt;/li&gt;
-            &lt;/ul&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-&lt;/div&gt;&lt;
+            &lt;/center&gt;
+            &lt;/p&gt;
 
+        &lt;/div&gt;
+
+        &lt;div data-role="footer"&gt;
+            &lt;div data-role="navbar" data-icon-pos="top"&gt;
+                &lt;ul&gt;
+                    &lt;li&gt;&lt;a href="additem.html" rel="external" data-ajax="false" data-inline="true" data-icon="plus" data-add-back-btn="true"&gt;Add&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="#browse" id="browseButton" rel="external" data-ajax="false" data-inline="true" data-icon="grid" data-add-back-btn="true"&gt;Browse&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href="#links" id="linksButton" rel="internal" data-ajax="true" data-inline="true" data-icon="info" data-add-back-btn="true"&gt;Links&lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+    &lt;/div&gt;
 
 
 &lt;script src="http://code.jquery.com/jquery-1.6.4.min.js"&gt;&lt;/script&gt;
@@ -388,454 +229,19 @@
 &lt;script src="jQuery.ui.datepicker.js"&gt;&lt;/script&gt;
 &lt;script src="jquery.ui.datepicker.mobile.js"&gt;&lt;/script&gt;
 
-
-&lt;script type="text/javascript" src="js/json.js"&gt;&lt;/script&gt;
-&lt;script type="text/javascript" src="js/main.js"&gt;&lt;/script&gt;
-
+    &lt;script type="text/javascript" src="js/JSON.js"&gt;&lt;/script&gt;
+    &lt;script type="text/javascript" src="js/main.js"&gt;&lt;/script&gt;
 &lt;/body&gt;
 </code></pre>
 
 <p></p>
-
-<p>var parseMediaForm = function(data)
-    {</p>
-
-<pre><code>    console.log(data);
-}
-
-$(document).ready(function()
-{
-    var mediaForm = $("#mediaForm");
-    mediaForm.validate(
-    {
-
-        invalidHandler: function(form, validator)
-        {
-
-
-        },
-        submitHandler: function()
-        {
-
-            var data = mediaForm.serializeArray();
-
-            parseMediaForm(data);
-        }
-    })
-});
-</code></pre>
-
-<p>window.addEventListener("DOMContentLoaded", function()
-{</p>
-
-<pre><code>function dia(x)
-{
-    var theElement = document.getElementById(x);
-    return theElement;
-}
-
-
-function makeMediaTypes() 
-{
-
-    var formTag = document.getElementsByTagName("form"),
-        selectLi = dia("mtype"),
-        makeSelect = document.createElement("select");
-        makeSelect.setAttribute("class", "required");
-        makeSelect.setAttribute("id", "mtype");
-        makeSelect.setAttribute("name", "mtype");
-        makeSelect.setAttribute("data-native-menu", "false");
-
-    for(var i=0, j=mediaGroups.length; i&lt;j; i++) 
-    {
-
-        var makeOption = document.createElement("option");
-        var optText = mediaGroups[i];
-        makeOption.setAttribute("value", optText);
-
-        makeOption.innerHTML = optText;
-        makeSelect.appendChild(makeOption);
-    }
-    selectLi.appendChild(makeSelect);
-}
-
-
-function getSelectedRadio()
-{
-
-    var radios = document.forms[0].mtopics;
-    for(var i=0; i&lt;radios.length; i++)
-    {
-        if(radios[i].checked)
-        {
-            mtopicsValue = radios[i].value;
-        }
-    }
-}
-
-
-
-function toggleControls(n)
-{
-
-}
-
-function saveMedia(key)
-{
-
-    if(!key)
-    {
-
-        var id = Math.floor(Math.random()*10000001);
-    }
-
-
-    else if(key === "A-Z" || "a-z")
-    {
-
-        localStorage.removeItem(this.key);
-    }
-    else
-    {
-
-        id = key;
-    }
-
-        getSelectedRadio();
-
-
-        var item            = {};
-            item.mtype      = ["Media Type:",dia("mtype").value];
-            item.mgraphic   = ["Image:",dia("mgraphic").value];
-            item.mname      = ["Media Name:",dia("mname").value];
-            item.mdate      = ["Media Date:",dia("mdate").value];
-            item.mrating    = ["Media Rating:",dia("mrating").value];
-
-            item.mtopics    = ["Media format:",mtopicsValue];
-            item.mtags      = ["Media Tags:",dia("mtags").value];
-            item.mcomments  = ["Comments:",dia("mcomments").value];
-
-        localStorage.setItem(id, JSON.stringify(item));
-        alert("Media Saved");
-}
-
-
-function autoFillData()
-{
-
-    for(var n in json)
-    {
-        var id = Math.floor(Math.random()*10000001);
-        localStorage.setItem(id, JSON.stringify(json[n]));
-    }
-}
-
-function getData()
-{
-
-    toggleControls("on");
-
-    if(localStorage.length === 0)
-    {
-        alert("No Media in local Storage. Test Data was Added.");
-
-        autoFillData();
-    }
-
-
-
-
-    var makeDiv = document.createElement("div");
-    makeDiv.setAttribute("id","items");
-    makeDiv.setAttribute("data-role", "content");
-    makeDiv.setAttribute("data-theme", "d");
-
-    var makeDivPrimary = document.createElement("div");
-    makeDivPrimary.setAttribute("class", "content-primary");
-
-    var makeList = document.createElement("ul");
-    makeList.setAttribute("id", "one");
-    makeList.setAttribute("data-role", "listview");
-    makeList.setAttribute("data-filter", "true");
-    makeList.setAttribute("data-inset", "true");
-
-
-    makeDiv.appendChild(makeDivPrimary);
-    makeDivPrimary.appendChild(makeList);
-    document.body.appendChild(makeDiv);
-    dia("items").style.display = "black";
-
-    for(var i=0, len=localStorage.length; i&lt;len; i++)
-    {
-        var makeli = document.createElement("li");
-        makeli.setAttribute("id", "two");
-
-        var linksLi = document.createElement("div");
-        linksLi.setAttribute("id", "three");
-
-        makeList.appendChild(makeli);
-
-        var key = localStorage.key(i);
-        var value = localStorage.getItem(key);
-
-        var obj = JSON.parse(value);
-        var makeSubList = document.createElement("a");
-        makeSubList.setAttribute("href", "#");
-        makeSubList.setAttribute("id", "four");
-
-        makeli.appendChild(makeSubList);
-
-
-        getProjectGraphic(obj.mgraphic[1], makeSubList);
-
-
-        var makeSubli = document.createElement("p");
-        makeSubli.setAttribute("id", "five");
-        makeSubList.appendChild(makeSubli);
-
-        for(var n in obj)
-        {
-
-            var optSubText = obj[n][1];
-            makeSubli.innerHTML = optSubText;
-            makeSubli.appendChild(linksLi);
-        }
-
-        makeItemLinks(localStorage.key(i), linksLi);
-    }
-}
-
-
-function getImage(mediaType, makeSubList)
-{
-    var imageLi = document.createElement("div");
-    imageLi.setAttribute("align", "left");      
-    makeSubList.appendChild(imageLi);
-    var newImg = document.createElement("img");
-    var setSrc = newImg.setAttribute("src", "images/" + mediaType + ".jpg");
-    var alignImg = newImg.setAttribute("class", "projectIconAlign");
-    imageLi.appendChild(newImg);
-}
-
-
-
-function getProjectGraphic(mediaName, makeSubList)
-{
-    var projectGraphicLi = document.createElement("div");
-    makeSubList.appendChild(projectGraphicLi);
-    var newImg = document.createElement("img");
-    var setSrc = newImg.setAttribute("src", mediaName);
-    var alignImg = newImg.setAttribute("class", "projectScreenshotAlign");
-    var setWidth = newImg.setAttribute("width", "75px");
-    var setHeight = newImg.setAttribute("height", "75px");
-    projectGraphicLi.appendChild(newImg);
-}
-
-
-function makeItemLinks(key, linksLi)
-{
-
-    var breakTag = document.createElement("br");
-
-
-    var editLink = document.createElement("a");
-    editLink.href = "#";
-    editLink.key = key;
-    var editText = "Edit Media";
-    editLink.addEventListener("click", editItem);
-    editLink.innerHTML = editText;  
-    linksLi.appendChild(editLink);
-
-
-    linksLi.appendChild(breakTag);
-
-
-    var deleteLink = document.createElement("a");
-    deleteLink.href = "#";
-    deleteLink.key = key;
-    var deleteText = "Delete Media";
-    deleteLink.addEventListener("click", deleteItem);
-    deleteLink.innerHTML = deleteText;
-    linksLi.appendChild(deleteLink);
-}
-
-
-function editItem()
-{
-
-    var value = localStorage.getItem(this.key);
-    var item = JSON.parse(value);
-
-
-    dia("mtype").value = item.mtype[1];
-    dia("mgraphic").value = item.mgraphic[1];
-    dia("mname").value = item.mname[1];
-    dia("mdate").value = item.mdate[1];
-    dia("mrating").value = item.mrating[1];
-    var radios = document.forms[0].mtopics;
-    for(var i=0; i&lt;radios.length; i++)
-    {
-        if(radios(i).value === "cd" &amp;&amp; item.mtopics(1) === "cd")
-        {
-            radios(i).setAttribute("checked", "checked");
-        }else if(radios(i).value === "bluray" &amp;&amp; item.mtopics(1) === "bluray")
-        {
-            radios(i).setAttribute("checked", "checked");
-        }else if(radios(i).value === "dvd" &amp;&amp; item.mtopics(1) === "dvd")
-        {
-            radios(i).setAttribute("checked", "checked");
-        }
-    }
-
-    dia("mtags").value = item.mtags[1];
-    dia("mcomments").value = item.mcomments[1];
-
-
-    save.removeEventListener("click", saveMedia);
-
-
-    dia("submit").value = "Edit Media";
-    var editSubmit = dia("submit");
-
-
-    editSubmit.addEventListener("click", validate);
-    editSubmit.key = this.key;
-}
-
-function deleteItem()
-{
-    var ask = confirm("You really want to Delete this Media?");
-    if(ask)
-    {
-        localStorage.removeItem(this.key);
-        alert("Media was Deleted");
-        window.location.reload();
-    }
-    else
-    {
-        alert("Media was Not Deleted");
-    }
-}
-
-function clearLocal()
-{
-    if(localStorage.length === 0)
-    {
-        alert("No Media in local storage to Delete.");
-    }
-    else
-    {
-        localStorage.clear();
-        alert("All Media Deleted from local storage.");
-        window.location.reload();
-        return false;
-
-    }
-}
-
-
-function validate(e)
-{
-
-    var getMtype = dia("mtype");
-    var getMname = dia("mname");
-    var getMdate = dia("mdate");
-
-
-    errMsg.innerHTML = "";
-        getMtype.style.border = "1px solid yellow";
-        getMname.style.border = "1px solid yellow";
-        getMdate.style.border = "1px solid yellow";
-
-
-    var messageAry = [];
-
-
-    if(getMtype.value === "-- Choose Media Type--")
-    {
-        var MtypeError = "Choose Media Type";
-        getMtype.style.border = "1px solid yellow";
-        messageAry.push(MtypeError);
-    }
-
-
-    if(getMname.value === "")
-    {
-        var MnameError = "Enter Media Name";
-        getMname.style.border = "1px solid yellow";
-        messageAry.push(MnameError);
-    }
-
-
-    if(getMdate.value === "")
-    {
-        var MdateError = "Enter Media Date";
-        getMdate.style.border = "1px solid yellow";
-        messageAry.push(MdateError);
-    }
-
-
-    if(messageAry.length &gt;= 1)
-    {
-        for(var i=0, j=messageAry.length; i&lt;j; i++)
-        {
-            var txt = document.createElement("li");
-            txt.innerHTML = messageAry(i);
-            errMsg.appendChild(txt);
-        }
-        e.preventDefault();
-        return false;
-    }else{
-
-        saveMedia(this.key);
-    }
-}
-
-
-
-var mediaGroups = ["-- Choose Media Type--", "Xbox", "Playstation", "Wii u", "Music", "PC", "Movie"],
-    mtopicValue,
-    errMsg = dia("errors");
-
-makeMediaTypes();
-
-var displayLink = dia("displayLink");
-displayLink.addEventListener("click", getData);
-
-var clearLink = dia("clear");
-clearLink.addEventListener("click", clearLocal);
-
-var displayXboxLink = dia("displayXboxLink");
-displayXboxLink.addEventListener("click", getData);
-
-var displayPlaystationLink = dia("displayPlaystationLink");
-displayPlaystationLink.addEventListener("click", getData);
-
-var displayMusicLink = dia("displayMusicLink");
-displayMusicLink.addEventListener("click", getData);
-
-var displayWiiuLink = dia("displayWiiuLink");
-displayWiiuLink.addEventListener("click", getData);
-
-var displayPcLink = dia("displayPcLink");
-displayPcLink.addEventListener("click", getData);
-
-var displayMovieLink = dia("displayMovieLink");
-displayMovieLink.addEventListener("click", getData);
-
-var save = dia("submit");
-
-save.addEventListener("click", saveMedia);
-</code></pre>
-
-<p>});</p>
       </section>
     </div>
 
     <!-- FOOTER  -->
     <div id="footer_wrap" class="outer">
       <footer class="inner">
-        <p class="copyright">Miu4 maintained by <a href="https://github.com/b42626">b42626</a></p>
+        <p class="copyright">bronze maintained by <a href="https://github.com/b42626">b42626</a></p>
         <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
       </footer>
     </div>
